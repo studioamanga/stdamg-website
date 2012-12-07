@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+%html
+	%head
+		%meta{:"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8"}
+		%title Studio AMANgA - About
+		%link{:rel => "stylesheet", :type => "text/css", :href => "style/main.css"}
+		%link{:rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "rss/news.xml"}
+		%link{:rel => "shortcut icon", :href => "http://www.studioamanga.com/img/favicon.ico"}
+		%link{:rel => "apple-touch-icon-precomposed", :href => "img/touch-icon-iphone4.png"}
+		%link{:rel => "apple-touch-icon-precomposed", :sizes => "72x72", :href => "img/touch-icon-ipad.png"}
+		%meta{:name => "viewport", :content => "width=device-width"}
+		%meta{:name => "description", :content => "Studio AMANgA is an independant website/app producer."}
+		%script{:type => "text/javascript"}
+			
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-18279263-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		%script{:type => "text/javascript"}
+			function show_screen(screen_id) {
+			document.getElementById(screen_id).style.opacity = '1';
+			}
+			function hide_screen(screen_id) {
+			document.getElementById(screen_id).style.opacity = '0';
+			}
+	  
+			function show_wb() { show_screen('screen_wb'); }
+			function hide_wb() { hide_screen('screen_wb'); }
+	  
+			function show_cts() { show_screen('screen_cts'); }
+			function hide_cts() { hide_screen('screen_cts'); }
+
+			function show_ol() { show_screen('screen_ol'); }
+			function hide_ol() { hide_screen('screen_ol'); }
+	  
+			function show_mt() { show_screen('screen_mt'); }
+			function hide_mt() { hide_screen('screen_mt'); }
+	  
+			function show_mii() { show_screen('screen_mii'); }
+			function hide_mii() { hide_screen('screen_mii'); }
+	  
+			function show_echoplex() { show_screen('screen_echoplex'); }
+			function hide_echoplex() { hide_screen('screen_echoplex'); }
+	%body
+		%header
+			%img{:src => "img/amg.png"}
+			%h1 Studio<br/>AMANgA
+		%nav
+			.screens
+				%img{:src =>"img/screens/devices.png", :alt => "iOS Screen", :id => "screens", :class => "screen"}
+				%img{:src =>"img/screens/onelist.png", :alt => "iOS Screen", :id => "screen_ol", :class => "screen_i"}
+				%img{:src =>"img/screens/contacts.png", :alt => "iOS Screen", :id => "screen_cts", :class => "screen_i"}
+				%img{:src =>"img/screens/wizbox.png", :alt => "iOS Screen", :id => "screen_wb", :class => "screen_i"}
+				%img{:src =>"img/screens/echoplex.png", :alt => "iOS Screen", :id => "screen_echoplex", :class => "screen_i"}
+				%img{:src =>"img/screens/memorii.png", :alt => "iOS Screen", :id => "screen_mii", :class => "screen_i"}
+				%img{:src =>"img/screens/mytee.png", :alt => "iOS Screen", :id => "screen_mt", :class => "screen_i"}
+
+			%ul.apps
+				%li
+					%a{:href => "/onelist/", :onmouseover => "show_ol();", :onmouseout => "hide_ol();"}
+						%img{:src => "img/icons/1list.png"}
+						.name 1List
+				%li
+					%a{:href => "/contacts/", :onmouseover => "show_cts();", :onmouseout => "hide_cts();"}
+						%img{:src => "img/icons/cts.png"}
+						.name Contact[s]
+				%li
+					%a{:href => "/wizbox/", :onmouseover => "show_wb();", :onmouseout => "hide_wb();"}
+						%img{:src => "img/icons/wiz.png"}
+						.name WizBox
+				%li
+					%a{:href => "/memorii/", :onmouseover => "show_mii();", :onmouseout => "hide_mii();"}
+						%img{:src => "img/icons/mii.png"}
+						.name Memorii
+				%li
+					%a{:href => "/echoplex/", :onmouseover => "show_echoplex();", :onmouseout => "hide_echoplex();"}
+						%img{:src => "img/icons/echo.png"}
+						.name D0TS:Echoplex
+				%li
+					%a{:href => "/mytee/about.html", :onmouseover => "show_mt();", :onmouseout => "hide_mt();"}
+						%img{:src => "img/icons/mt.png"}
+						.name MyTee
+		%nav.secondary
+			%ul
+				%li
+					%a{:href => "/news.html"} + News
+				%li
+					%a{:href => "/about.html"} + About

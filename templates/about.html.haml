@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+%html
+	%head
+		%meta{:"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8"}
+		%title Studio AMANgA - About
+		%link{:rel => "stylesheet", :type => "text/css", :href => "style/main.css"}
+		%link{:rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "rss/news.xml"}
+		%link{:rel => "shortcut icon", :href => "http://www.studioamanga.com/img/favicon.ico"}
+		%link{:rel => "apple-touch-icon-precomposed", :href => "img/touch-icon-iphone4.png"}
+		%link{:rel => "apple-touch-icon-precomposed", :sizes => "72x72", :href => "img/touch-icon-ipad.png"}
+		%meta{:name => "viewport", :content => "width=device-width"}
+		%meta{:name => "description", :content => "Studio AMANgA is an independant website/app producer."}
+		%script{:type => "text/javascript"}
+			:cdata
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-18279263-1']);
+				_gaq.push(['_trackPageview']);
+
+				(function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+		%script{:type => "text/javascript"}
+			:cdata
+				(function() {
+					var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+					s.type = 'text/javascript';
+					s.async = true;
+					s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+					t.parentNode.insertBefore(s, t);
+				})();
+
+	%body
+		%header
+			%a{:href => "index.php" }
+				%img#logo{:src => "img/amg.png", :alt => "logo" }
+				%h1 Studio<br/>AMANgA
+		%section.about
+			%h2 About
+			%p 
+				Studio AMANgA is an independant website/app producer.
+			%p 
+				I like to create enjoyable stuff. Beautiful, simple and efficient. There are so many things you can do with a website or an application, you just need to make it right.
+			%p
+				Feel free to contact me at: 
+				%a{:href => "mailto:studioamanga@gmail.com" }
+					studioamanga@gmail.com
+			%p#flattr
+				%a.FlattrButton{:style => "display:none;", :rev => "flattr;button:compact;", :href => "http://www.studioamanga.com"}
+		%footer
+			%nav
+				%a#amg{:href => "index.php" }
+					%img{:src => "img/amgmini.png", :alt => "amg" }
+			Studio AMANgA - 2010/2012 - 
+			%a{:href => "mailto:studioamanga@gmail.com" }
+				studioamanga@gmail.com
