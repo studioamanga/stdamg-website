@@ -2,7 +2,7 @@
 %html
 	%head
 		%meta{:"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8"}
-		%title Studio AMANgA - About
+		%title Studio AMANgA
 		%link{:rel => "stylesheet", :type => "text/css", :href => "style/main.css"}
 		%link{:rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "rss/news.xml"}
 		%link{:rel => "shortcut icon", :href => "http://www.studioamanga.com/img/favicon.ico"}
@@ -49,42 +49,42 @@
 			function hide_echoplex() { hide_screen('screen_echoplex'); }
 	%body
 		%header
-			%img{:src => "img/amg.png"}
+			%img{:src => "img/amg.png", :alt => "StdAMG Logo"}
 			%h1 Studio<br/>AMANgA
 		%nav
 			.screens
-				%img{:src =>"img/screens/devices.png", :alt => "iOS Screen", :id => "screens", :class => "screen"}
-				%img{:src =>"img/screens/onelist.png", :alt => "iOS Screen", :id => "screen_ol", :class => "screen_i"}
-				%img{:src =>"img/screens/contacts.png", :alt => "iOS Screen", :id => "screen_cts", :class => "screen_i"}
-				%img{:src =>"img/screens/wizbox.png", :alt => "iOS Screen", :id => "screen_wb", :class => "screen_i"}
-				%img{:src =>"img/screens/echoplex.png", :alt => "iOS Screen", :id => "screen_echoplex", :class => "screen_i"}
-				%img{:src =>"img/screens/memorii.png", :alt => "iOS Screen", :id => "screen_mii", :class => "screen_i"}
-				%img{:src =>"img/screens/mytee.png", :alt => "iOS Screen", :id => "screen_mt", :class => "screen_i"}
+				%img{:src =>"img/screens/devices.png", :alt => "Devices", :id => "screens", :class => "screen"}
+				%img{:src =>"img/screens/onelist.png", :alt => "Devices with 1List", :id => "screen_ol", :class => "screen_i"}
+				%img{:src =>"img/screens/contacts.png", :alt => "Devices with Contacts", :id => "screen_cts", :class => "screen_i"}
+				%img{:src =>"img/screens/wizbox.png", :alt => "Devices with WizBox", :id => "screen_wb", :class => "screen_i"}
+				%img{:src =>"img/screens/echoplex.png", :alt => "Devices with Echoplex", :id => "screen_echoplex", :class => "screen_i"}
+				%img{:src =>"img/screens/memorii.png", :alt => "Devices with Memorii", :id => "screen_mii", :class => "screen_i"}
+				%img{:src =>"img/screens/mytee.png", :alt => "Devices with MyTee", :id => "screen_mt", :class => "screen_i"}
 
 			%ul.apps
 				%li
 					%a{:href => "/onelist/", :onmouseover => "show_ol();", :onmouseout => "hide_ol();"}
-						%img{:src => "img/icons/1list.png"}
+						%img{:src => "img/icons/1list.png", :alt => "1List icon"}
 						.name 1List
 				%li
 					%a{:href => "/contacts/", :onmouseover => "show_cts();", :onmouseout => "hide_cts();"}
-						%img{:src => "img/icons/cts.png"}
+						%img{:src => "img/icons/cts.png", :alt => "Contacts icon"}
 						.name Contact[s]
 				%li
 					%a{:href => "/wizbox/", :onmouseover => "show_wb();", :onmouseout => "hide_wb();"}
-						%img{:src => "img/icons/wiz.png"}
+						%img{:src => "img/icons/wiz.png", :alt => "WizBox icon"}
 						.name WizBox
 				%li
 					%a{:href => "/memorii/", :onmouseover => "show_mii();", :onmouseout => "hide_mii();"}
-						%img{:src => "img/icons/mii.png"}
+						%img{:src => "img/icons/mii.png", :alt => "Memorii icon"}
 						.name Memorii
 				%li
 					%a{:href => "/echoplex/", :onmouseover => "show_echoplex();", :onmouseout => "hide_echoplex();"}
-						%img{:src => "img/icons/echo.png"}
+						%img{:src => "img/icons/echo.png", :alt => "Echoplex icon"}
 						.name D0TS:Echoplex
 				%li
 					%a{:href => "/mytee/about.html", :onmouseover => "show_mt();", :onmouseout => "hide_mt();"}
-						%img{:src => "img/icons/mt.png"}
+						%img{:src => "img/icons/mt.png", :alt => "MyTee icon"}
 						.name MyTee
 		%nav.secondary
 			%ul
