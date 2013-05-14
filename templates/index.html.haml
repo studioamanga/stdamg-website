@@ -11,7 +11,6 @@
 		%meta{:name => "viewport", :content => "width=device-width"}
 		%meta{:name => "description", :content => "Studio AMANgA is an independant website/app producer."}
 		%script{:type => "text/javascript"}
-			
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-18279263-1']);
 			_gaq.push(['_trackPageview']);
@@ -23,12 +22,8 @@
 			})();
 
 		%script{:type => "text/javascript"}
-			function show_screen(screen_id) {
-			document.getElementById(screen_id).style.opacity = '1';
-			}
-			function hide_screen(screen_id) {
-			document.getElementById(screen_id).style.opacity = '0';
-			}
+			function show_screen(screen_id) { document.getElementById(screen_id).style.opacity = '1'; }
+			function hide_screen(screen_id) { document.getElementById(screen_id).style.opacity = '0'; }
 	  
 			function show_wb() { show_screen('screen_wb'); }
 			function hide_wb() { hide_screen('screen_wb'); }
