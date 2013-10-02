@@ -1,7 +1,9 @@
 all:
-	haml templates/index.html.haml index.html
-	haml templates/about.html.haml about.html
-	sass style/main.scss style/main.css
+	./generate.rb 
+	sass style/main.scss rendered/style/main.css
 
+install:
+	bundle install
+	
 watch:
-	sass --watch style:style
+	sass --watch style/main.scss:rendered/style/main.css

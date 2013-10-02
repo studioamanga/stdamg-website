@@ -3,3 +3,5 @@
 As seen on [http://www.studioamanga.com](http://www.studioamanga.com)
 
 ![StdAMG logo](http://www.studioamanga.com/onelist/img/amgmini.png)
+
+Based on [scarpenter/command_line_haml](https://github.com/scarpenter/command_line_haml)
