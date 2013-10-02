@@ -1,0 +1,27 @@
+
+#title.col
+	%header
+		%img{:src => 'img/amg.png'}
+		%h1 
+			%span
+				Studio
+			%span
+				AMANgA
+#apps.col
+	%h2 Apps
+	- @apps.each do |app|
+		%a.app{:href => app["url"]}
+			%img.icon{:src => 'img/'+app["icon"]}
+			%h3= app["name"]
+#news.col
+	%h2 News
+	%div
+		%article
+			%h3
+				New site design
+			%p
+				Welcome to the new Studio AMANgA website. This one is <a href="https://github.com/studioamanga/stdamg-website">open-sourced</a>, so feel free to give me some feedback.
+	#twitter
+		%h2 @StudioAMANgA
+		<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/StudioAMANgA" data-widget-id="384426690429984768">Tweets by @StudioAMANgA</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
