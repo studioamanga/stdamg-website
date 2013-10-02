@@ -1,127 +1,129 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 
 body {
-	font-family: "Helvetica Neue", "Arial", sans-serif;
+	font-family: 'Raleway', sans-serif;
 	background-color: black;
 	background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#222));
-	background: -moz-linear-gradient(top,  #000,  #222);
+	background: -moz-linear-gradient(top,  #000,  #111);
 	background-attachment:fixed;
-	height:100%;
-	margin:0px;
 	color: white;
+	height:100%;
+	margin:40px 0 80px 0;
+
+	text-align: center;
+}
+
+h1 {
+	margin: 0px;
+	font-size: 1.3em;
+}
+
+h2, h3 {
+  font-weight: normal;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+h3 {
+  font-size: 1em;
 }
 
 a {
 	color: white;
 	text-decoration: none;
-}
 
-header {
-	display: block;
-	position: relative;
-	text-align: center;
-	margin-top: 20px;
-
-	img {
-		display: inline-block;
-		width: 100px;
-		position: relative;
-		top: 8px;
-	}
-
-	h1 {
-		display: inline-block;
-		text-align: left;
-		font-weight: normal;
-		font-size: 1.5em;
+	&:HOVER {
+		text-decoration: underline;
 	}
 }
 
-nav {
-	text-align: center;
+.col {
+	padding: 0 20px 0 20px;
+	box-sizing: border-box;
+	text-align: left;
+	width: 100%;
+	vertical-align: top;
 
-	ul {
-		display: inline-block;
-		margin-bottom: 40px;
-		width: 330px;
-		list-style: none;
+	&#title {
+		text-align: center;
+	}
 
-		li {
-			margin-bottom: 10px;
-			text-align: left;
+	h2 {
+		margin-bottom: 20px;
+	}
+}
 
-			a {
-				position: relative;
-				font-size: 1.3em;
+#apps {
+	.app {
+		display: block;
+		margin-bottom: 20px;
+		color: white;
+		text-decoration: none;
 
-				&:active {
-					top: 1px;
-				}
+		img.icon {
+			width: 40px;
+			display: inline-block;
+			border-radius: 8px;
+		}
 
-				img {
-					display: inline-block;
-					padding: 2px;
-					border-radius: 18%;
-				}
-
-				&:HOVER img {
-					background-color: white;
-				}
-
-				.name {
-					display: inline-block;
-					position: relative;
-					top: 18px;
-					margin-left: 10px;
-					vertical-align: top;
-				}
-			}
+		&:HOVER h3 {
+			text-decoration: underline;
+		}
+		h3 {
+			margin-left: 10px;
+			position: relative;
+			top: 10px;
+			vertical-align: top;
+			display: inline-block;
 		}
 	}
 }
 
-.screens {
-	display:none;
+#news {
+	p {
+		color: #ccc;
+	}
+}
+
+#apps,
+#news,
+#twitter {
+	margin-top: 60px;
+}
+
+@media all and (min-width: 600px) {
+
+	.col {
+		display: inline-block;
+		width: 300px;
+	}
+	#title.col {
+		display: block;
+		width: auto;
+	}
 }
 
 @media all and (min-width: 1000px) {
 
-	header {
-
-		margin-bottom: 40px;
-
-		img {
-			width: 200px;
-			top: 18px;
-		}
-	
-		h1 {
-			font-size: 3em;
-		}
+	body {
+		margin-top: 80px;
 	}
 
-	nav.secondary ul li {
-		display: inline-block;
-		margin: 20px 40px 20px 40px;
-	}
-
-	.screens {
-		display: inline-block;
+	#title {
 		position: relative;
-		width: 600px;
-		height: 440px;
-		margin-right: 40px;
+		top: -8px;
+	}
 
-		img {
-			position: absolute;
-			top: 10px;
-			left: 0px;
-	  		-webkit-transition: opacity 0.4s linear;
-	  		-moz-transition-property: opacity;
-	  		-moz-transition-duration: 0.4s;
+	.col,
+	#title.col {
+		display: inline-block;
+		width: 300px;
+	}
 
-	  		&.screen_i {
-				opacity: 0;
-	  		}
-		}
+	#apps,
+	#news {
+		margin-top: 0px;
 	}
 }

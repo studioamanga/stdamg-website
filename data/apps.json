@@ -1,0 +1,32 @@
+[
+  {
+    "name": "1List",
+    "icon": "apps/onelist.png",
+    "url" : "http://www.studioamanga.com/onelist/"
+  },
+  { 
+    "name": "Contact[s]",
+    "icon": "apps/contacts.png",
+    "url" : "http://www.studioamanga.com/contacts/"
+  },
+  { 
+    "name": "WizBox",
+    "icon": "apps/wizbox.png",
+    "url" : "http://www.studioamanga.com/wizbox/"
+  },
+  { 
+    "name": "Games Keeper",
+    "icon": "apps/gameskeeper.png",
+    "url" : "http://www.studioamanga.com/gameskeeper/"
+  },
+  { 
+    "name": "Memorii",
+    "icon": "apps/memorii.png",
+    "url" : "http://www.studioamanga.com/memorii/"
+  },
+  { 
+    "name": "D0TS:Echoplex",
+    "icon": "apps/echoplex.png",
+    "url" : "http://www.studioamanga.com/echoplex/"
+  }
+]

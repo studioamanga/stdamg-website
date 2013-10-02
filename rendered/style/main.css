@@ -1,0 +1,93 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: black;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(#222222));
+  background: -moz-linear-gradient(top, black, #111111);
+  background-attachment: fixed;
+  color: white;
+  height: 100%;
+  margin: 40px 0 80px 0;
+  text-align: center; }
+
+h1 {
+  margin: 0px;
+  font-size: 1.3em; }
+
+h2, h3 {
+  font-weight: normal;
+  margin: 0px; }
+
+h2 {
+  font-size: 1.2em; }
+
+h3 {
+  font-size: 1em; }
+
+a {
+  color: white;
+  text-decoration: none; }
+  a:HOVER {
+    text-decoration: underline; }
+
+.col {
+  padding: 0 20px 0 20px;
+  box-sizing: border-box;
+  text-align: left;
+  width: 100%;
+  vertical-align: top; }
+  .col#title {
+    text-align: center; }
+  .col h2 {
+    margin-bottom: 20px; }
+
+#apps .app {
+  display: block;
+  margin-bottom: 20px;
+  color: white;
+  text-decoration: none; }
+  #apps .app img.icon {
+    width: 40px;
+    display: inline-block;
+    border-radius: 8px; }
+  #apps .app:HOVER h3 {
+    text-decoration: underline; }
+  #apps .app h3 {
+    margin-left: 10px;
+    position: relative;
+    top: 10px;
+    vertical-align: top;
+    display: inline-block; }
+
+#news p {
+  color: #ccc; }
+
+#apps,
+#news,
+#twitter {
+  margin-top: 60px; }
+
+@media all and (min-width: 600px) {
+  .col {
+    display: inline-block;
+    width: 300px; }
+
+  #title.col {
+    display: block;
+    width: auto; } }
+@media all and (min-width: 1000px) {
+  body {
+    margin-top: 80px; }
+
+  #title {
+    position: relative;
+    top: -8px; }
+
+  .col,
+  #title.col {
+    display: inline-block;
+    width: 300px; }
+
+  #apps,
+  #news {
+    margin-top: 0px; } }
