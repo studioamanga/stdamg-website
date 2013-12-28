@@ -1,5 +1,10 @@
 [
   {
+    "name": "Comic Book Day",
+    "icon": "apps/comicbookday.png",
+    "url" : "http://www.studioamanga.com/comicbookday/"
+  },
+  {
     "name": "1List",
     "icon": "apps/onelist.png",
     "url" : "http://www.studioamanga.com/onelist/"
