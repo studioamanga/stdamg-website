@@ -1,4 +1,7 @@
 all:
+	mkdir -p rendered
+	mkdir -p rendered/style
+	cp -r static/* rendered/
 	./generate.rb 
 	sass style/main.scss rendered/style/main.css
 
