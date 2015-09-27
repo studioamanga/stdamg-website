@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %title Studio AMANgA
+    %link{:rel => "stylesheet", :type => "text/css", :href => "style/main.css?val"}
+    -# %link{:rel => "alternate", :type => "application/rss+xml", :title => "RSS", :href => "rss/news.xml"}
+    %link{:rel => "shortcut icon", :href => "http://www.studioamanga.com/img/favicon.ico"}
+    %link{:rel => "apple-touch-icon-precomposed", :href => "img/touch-icon-iphone4.png"}
+    %link{:rel => "apple-touch-icon-precomposed", :href => "img/touch-icon-ipad.png", :sizes => "72x72"}
+    %meta{:name => "viewport",    :content => "width=device-width"}
+    %meta{:name => "description", :content => "Studio AMANgA is an independant website/app producer."}
+
+  %body
+    Ah ah ah ah
+    = yield
+    %script{:type => "text/javascript"}
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18279263-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

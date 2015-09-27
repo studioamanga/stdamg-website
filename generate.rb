@@ -1,28 +1,28 @@
 #!/usr/bin/env ruby
 
-require "rubygems"
-require "bundler/setup"
-require "json"
+require 'rubygems'
+require 'bundler/setup'
+require 'json'
 
-require "haml"
+require 'haml'
 
 # Calls to "render" can take a context object that will be accessible from the templates.
 class Context
   # Any properties of this object are available in the Haml templates.
-  attr_reader :example_boolean
   attr_reader :apps
+  attr_reader :app
 
-  def initialize(example_boolean, scope, options)
-    @example_boolean = example_boolean
-    @apps = JSON.load IO.read("data/apps.json")
-    @scope = scope
-    @options = options
+  def initialize(apps, app, scope, options)
+    @apps     = apps
+    @app      = app
+    @scope    = scope
+    @options  = options
   end
 
   # This is an example function that can be called inside Haml templates.
   def copyright_year
     start_year = 2013
-    end_year = Time.now.year
+    end_year   = Time.now.year
     if end_year == start_year
       start_year.to_s
     else
@@ -53,16 +53,15 @@ class Context
 end
 
 class Generator
-  def initialize(example_boolean, output_dir = ".")
-    @example_boolean = example_boolean
-    @output_dir = output_dir
-    # Change these to whatever makes sense for your needs.
+  def initialize(apps, output_dir = ".")
+    @apps         = apps
+    @output_dir   = output_dir
     @haml_options = { attr_wrapper: '"', format: :html5 }
   end
 
-  def generate(input_file)
-    layout = Haml::Engine.new(File.read("./views/layout.html.haml"), @haml_options)
-    c = Context.new @example_boolean, input_file, @haml_options
+  def generate(input_file, layout_file = "layout", current_app = nil)
+    layout = Haml::Engine.new(File.read("./views/#{layout_file}.html.haml"), @haml_options)
+    c = Context.new @apps, current_app, input_file, @haml_options
 
     # If the file being processed by Haml contains a yield statement, the block passed to
     # "render" will be called when it's hit.
@@ -80,7 +79,10 @@ class Generator
 end
 
 if __FILE__==$0
-  example_boolean = ARGV.length > 0 && (ARGV[0] == "true" || ARGV[0] == "yes")
-  g = Generator.new(example_boolean, "rendered")
+  # example_boolean = ARGV.length > 0 && (ARGV[0] == "true" || ARGV[0] == "yes")
+  apps = JSON.load IO.read("data/apps.json")
+  g = Generator.new(apps, "rendered")
   g.generate "index"
+
+  g.generate "index-apps", "layout-apps", apps["wizbox"]
 end

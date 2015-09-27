@@ -1,4 +1,3 @@
-
 #title.col
 	%header
 		%img#mainlogo{:src => 'img/amg.png?val', :alt => 'Studio AMANgA Logo'}
@@ -7,9 +6,10 @@
 				Studio
 			%span
 				AMANgA
+
 #apps.col
 	%h2 Apps
-	- @apps.each do |app|
+	- @apps.each do |app_key, app|
 		%a.app{:href => app["url"]}
 			%img.icon{:src => 'img/'+app["icon"], :alt => app["name"]+' Icon'}
 			%h3= app["name"]
