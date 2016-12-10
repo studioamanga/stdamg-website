@@ -14,15 +14,20 @@
     "icon": "apps/contacts.png",
     "url" : "http://www.studioamanga.com/contacts/"
   },
-  "wizbox": { 
-    "name": "WizBox",
-    "icon": "apps/wizbox.png",
-    "url" : "http://www.studioamanga.com/wizbox/"
-  },
   "gameskeeper": { 
     "name": "Games Keeper",
     "icon": "apps/gameskeeper.png",
     "url" : "http://www.studioamanga.com/gameskeeper/"
+  },
+  "megamoji": { 
+    "name": "Mega Moji",
+    "icon": "apps/megamoji.png",
+    "url" : "http://www.studioamanga.com/megamoji/"
+  },
+  "wizbox": { 
+    "name": "WizBox",
+    "icon": "apps/wizbox.png",
+    "url" : "http://www.studioamanga.com/wizbox/"
   },
   "memorii": { 
     "name": "Memorii",
