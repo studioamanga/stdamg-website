@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.studioamanga.com</loc>
+    <loc>https://www.studioamanga.com</loc>
   </url>
   <url>
-    <loc>http://www.studioamanga.com/comicbookday/</loc>
+    <loc>https://www.studioamanga.com/comicbookday/</loc>
   </url>
   <url>
-    <loc>http://www.studioamanga.com/onelist/</loc>
+    <loc>https://www.studioamanga.com/onelist/</loc>
   </url>
   <url>
-    <loc>http://www.studioamanga.com/contacts/</loc>
+    <loc>https://www.studioamanga.com/contacts/</loc>
   </url>
   <url>
-    <loc>http://www.studioamanga.com/wizbox/</loc>
+    <loc>https://www.studioamanga.com/wizbox/</loc>
   </url>
   <url>
-    <loc>http://www.studioamanga.com/gameskeeper/</loc>
+    <loc>https://www.studioamanga.com/gameskeeper/</loc>
   </url>
   <url>
-    <loc>http://www.studioamanga.com/memorii/</loc>
+    <loc>https://www.studioamanga.com/memorii/</loc>
   </url>
   <url>
-    <loc>http://www.studioamanga.com/echoplex/</loc>
+    <loc>https://www.studioamanga.com/echoplex/</loc>
+  </url>
+  <url>
+    <loc>https://www.studioamanga.com/nanonotes/</loc>
   </url>
 </urlset>
