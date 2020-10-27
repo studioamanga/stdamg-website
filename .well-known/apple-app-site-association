@@ -1,5 +1,7 @@
 {
-  "appclips": {
-    "apps": ["77S3V3W24J.com.studioamanga.airgrenoble.Clip"]
+  "applinks": {
+    "appclips": {
+      "apps": ["77S3V3W24J.com.studioamanga.airgrenoble.Clip"]
+    }
   }
 }
