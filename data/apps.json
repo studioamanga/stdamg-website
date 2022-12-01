@@ -2,46 +2,55 @@
   "gameskeeper": { 
     "name": "Games Keeper",
     "icon": "apps/gameskeeper.png",
-    "url" : "https://www.studioamanga.com/gameskeeper/"
+    "url" : "https://www.studioamanga.com/gameskeeper/",
+    "releasenotes" : "https://www.studioamanga.com/gameskeeper/releasenotes.json"
   },
   "comicbookday": {
     "name": "Comic Book Day",
     "icon": "apps/comicbookday.png",
-    "url" : "https://www.studioamanga.com/comicbookday/"
+    "url" : "https://www.studioamanga.com/comicbookday/",
+    "releasenotes" : "https://www.studioamanga.com/comicbookday/releasenotes.json"
   },
   "onelist": {
     "name": "1List",
     "icon": "apps/onelist.png",
-    "url" : "https://www.studioamanga.com/onelist/"
+    "url" : "https://www.studioamanga.com/onelist/",
+    "releasenotes" : "https://www.studioamanga.com/onelist/releasenotes.json"
   },
   "contacts": { 
     "name": "Contact[s]",
     "icon": "apps/contacts.png",
-    "url" : "https://www.studioamanga.com/contacts/"
+    "url" : "https://www.studioamanga.com/contacts/",
+    "releasenotes" : "https://www.studioamanga.com/contacts/releasenotes.json"
   },
   "megamoji": { 
     "name": "Mega Moji",
     "icon": "apps/megamoji.png",
-    "url" : "https://www.studioamanga.com/megamoji/"
+    "url" : "https://www.studioamanga.com/megamoji/",
+    "releasenotes" : "https://www.studioamanga.com/megamoji/releasenotes.json"
   },
   "memorii": { 
     "name": "Memorii",
     "icon": "apps/memorii.png",
-    "url" : "https://www.studioamanga.com/memorii/"
+    "url" : "https://www.studioamanga.com/memorii/",
+    "releasenotes" : "https://www.studioamanga.com/memorii/releasenotes.json"
   },
   "nanonotes": { 
     "name": "Nano Notes",
     "icon": "apps/nanonotes.png",
-    "url" : "https://www.studioamanga.com/nanonotes/"
+    "url" : "https://www.studioamanga.com/nanonotes/",
+    "releasenotes" : "https://www.studioamanga.com/nanonotes/releasenotes.json"
   },
   "wizbox": { 
     "name": "WizBox",
     "icon": "apps/wizbox.png",
-    "url" : "https://www.studioamanga.com/wizbox/"
+    "url" : "https://www.studioamanga.com/wizbox/",
+    "releasenotes" : "https://www.studioamanga.com/wizbox/releasenotes.json"
   },
   "echoplex": { 
     "name": "D0TS:Echoplex",
     "icon": "apps/echoplex.png",
-    "url" : "https://www.studioamanga.com/echoplex/"
+    "url" : "https://www.studioamanga.com/echoplex/",
+    "releasenotes" : "https://www.studioamanga.com/echoplex/releasenotes.json"
   }
 }
