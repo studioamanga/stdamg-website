@@ -19,6 +19,12 @@ h1 {
 #mainlogo {
   width: 200px;
   height: 127px;
+  position: relative;
+  left: -13px;
+}
+
+.subtitle {
+  color: darkgray;
 }
 
 h2, h3 {
@@ -48,10 +54,6 @@ a {
   text-align: left;
   width: 100%;
   vertical-align: top;
-
-  &#title {
-    text-align: center;
-  }
 
   h2 {
     margin-bottom: 20px;
@@ -88,19 +90,7 @@ a {
   }
 }
 
-@media all and (min-width: 600px) {
-  .col {
-    display: inline-block;
-    width: 300px;
-  }
-
-  #title.col {
-    display: block;
-    width: auto;
-  }
-}
-
-@media all and (min-width: 1000px) {
+@media all and (min-width: 610px) {
   body {
     margin-top: 80px;
   }
