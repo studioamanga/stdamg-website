@@ -10,9 +10,10 @@ body {
   text-align: center;
 }
 
-h1 {
+h1, h2, h3 {
   margin: 0px;
-  font-size: 1.3em;
+  margin-bottom: 4px;
+  font-size: 1em;
   font-weight: normal;
 }
 
@@ -24,19 +25,8 @@ h1 {
 }
 
 .subtitle {
-  color: darkgray;
-}
-
-h2, h3 {
-  margin: 0px;
-  font-weight: normal;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-h3 {
-  font-size: 1em;
+  color: gray;
+  font-size: 0.9em;
 }
 
 a {
@@ -54,10 +44,6 @@ a {
   text-align: left;
   width: 100%;
   vertical-align: top;
-
-  h2 {
-    margin-bottom: 20px;
-  }
 }
 
 #apps {
@@ -76,16 +62,15 @@ a {
       border-radius: 8px;
     }
 
-    &:HOVER h3 {
-      text-decoration: underline;
+    & > div {
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 10px;
+      margin-top: 1px;
     }
 
-    h3 {
-      margin-left: 10px;
-      position: relative;
-      top: 10px;
-      vertical-align: top;
-      display: inline-block;
+    &:HOVER h3 {
+      text-decoration: underline;
     }
   }
 }
@@ -100,8 +85,12 @@ a {
     top: -8px;
   }
 
-  .col, #title.col {
+  .col {
     display: inline-block;
+    width: auto;
+  }
+
+  #title.col {
     width: 300px;
   }
 
