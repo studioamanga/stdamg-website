@@ -23,7 +23,7 @@ let apps: [App] = [
     App(name: "Mega Moji", slug: "megamoji", description: "Big emoji for iMessage"),
     App(name: "Memorii", slug: "memorii", description: "Study Chinese, Japanese, and Korean"),
     App(name: "WizBox", slug: "wizbox", description: "Magic: The Gathering toolbox"),
-    App(name: "D0TS:Echoplex", slug: "echoplex", description: "Music sequencer")
+    App(name: "D0TS:Echoplex", iconPath: "apps/echoplex.png", slug: "echoplex", releaseNotesPath: "~/Developer/D0TS/releasenotes.json", description: "Music sequencer")
 ]
 
 /// FROM Trackup
@@ -69,12 +69,6 @@ public enum TrackupItemStatus: String, Codable {
 
 let decoder = JSONDecoder()
 let appsHTML = apps.map { app in
-    // let url = URL(fileURLWithPath: NSString(string: app.releaseNotesPath).expandingTildeInPath)
-    // let data = try! Data(contentsOf: url)
-    // let releaseNotes = try! decoder.decode(TrackupDocument.self, from: data)
-    // let lastVersion = releaseNotes.versions.first!
-    // let dateString = DateComponentsFormatter.localizedString(from: lastVersion.createdDate!, unitsStyle: .full)
-
     return """
         <a class="app" href="https://www.studioamanga.com/\(app.slug)/">
             <img alt="\(app.name) Icon" class="icon" src="img/\(app.iconPath)">
@@ -85,9 +79,32 @@ let appsHTML = apps.map { app in
         </a>
     """ }.joined(separator: "\n")
 
+let appsAdminHTML = apps.map { app in
+    let url = URL(fileURLWithPath: NSString(string: app.releaseNotesPath).expandingTildeInPath)
+    let data = try! Data(contentsOf: url)
+    let releaseNotes = try! decoder.decode(TrackupDocument.self, from: data)
+    let lastVersion = releaseNotes.versions.first!
+    let date = Calendar.current.date(from: lastVersion.createdDate!)
+    let dateString = RelativeDateTimeFormatter().localizedString(for: date!, relativeTo: Date())
+
+    return """
+        <a class="app" href="https://www.studioamanga.com/\(app.slug)/">
+            <img alt="\(app.name) Icon" class="icon" src="img/\(app.iconPath)">
+            <div>
+                <h3>\(app.name)</h3>
+                <div class="subtitle">Last version: \(lastVersion.title), published \(dateString)</div>
+            </div>
+        </a>
+    """ }.joined(separator: "\n")
+
 guard let indexTemplate = try? String(contentsOfFile: "template/index.html") else {
     abort()
 }
 
 let indexHTML = indexTemplate.replacingOccurrences(of: "[APPS]", with: appsHTML)
-print("\(indexHTML)")
+let indexRenderedURL = URL(fileURLWithPath: "rendered/index.html")
+try? indexHTML.write(to: indexRenderedURL, atomically: true, encoding: .utf8)
+
+let adminHTML = indexTemplate.replacingOccurrences(of: "[APPS]", with: appsAdminHTML)
+let adminRenderedURL = URL(fileURLWithPath: "rendered/admin.html")
+try? adminHTML.write(to: adminRenderedURL, atomically: true, encoding: .utf8)
