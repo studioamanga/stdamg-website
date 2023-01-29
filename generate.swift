@@ -26,6 +26,12 @@ let apps: [App] = [
     App(name: "D0TS:Echoplex", iconPath: "apps/echoplex.png", slug: "echoplex", releaseNotesPath: "~/Developer/D0TS/releasenotes.json", description: "Music sequencer")
 ]
 
+let extraApps: [App] = [
+    App(name: "Air Grenoble", slug: "airgrenoble", description: "Retrouvez l’indice de qualité de l’air pour Grenoble"),
+    App(name: "Grenoble Municipal Library", iconPath: "apps/bm.png", slug: "bmgrenoble", releaseNotesPath: "~/Developer/bm-grenoble-ios/releasenotes.json", description: "Connect your Grenoble Municipal Library account and check your current loans"),
+    App(name: "PlayGuide", iconPath: "apps/pg.png", slug: "", releaseNotesPath: "~/Developer/bm-grenoble-ios/releasenotes.json", description: "L’annuaire des aires de jeux pour enfants")
+]
+
 /// FROM Trackup
 public struct TrackupDocument: Codable {
     public var title: String = ""
@@ -79,7 +85,7 @@ let appsHTML = apps.map { app in
         </a>
     """ }.joined(separator: "\n")
 
-let appsAdminHTML = apps.map { app in
+let appsAdminHTML = (apps + extraApps).map { app in
     let url = URL(fileURLWithPath: NSString(string: app.releaseNotesPath).expandingTildeInPath)
     let data = try! Data(contentsOf: url)
     let releaseNotes = try! decoder.decode(TrackupDocument.self, from: data)
