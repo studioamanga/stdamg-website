@@ -17,13 +17,13 @@ extension App {
 let apps: [App] = [
     App(name: "Games Keeper", iconPath: "apps/gameskeeper.png", slug: "gameskeeper", releaseNotesPath: "~/Developer/GamesKeeper/releasenotes.json", description: "Score tracking for board games"),
     App(name: "Nano Notes", slug: "nanonotes", description: "Sync notes with Apple Watch"),
-    App(name: "Comic Book Day", slug: "comicbookday", description: "Track comic book releases"),
     App(name: "1List", slug: "onelist", description: "Simple reminders list"),
     App(name: "Contact[s]", slug: "contacts", description: "Beautiful address book"),
     App(name: "Mega Moji", slug: "megamoji", description: "Big emoji for iMessage"),
     App(name: "Memorii", slug: "memorii", description: "Study Chinese, Japanese, and Korean"),
     App(name: "WizBox", slug: "wizbox", description: "Magic: The Gathering toolbox"),
-    App(name: "D0TS:Echoplex", iconPath: "apps/echoplex.png", slug: "echoplex", releaseNotesPath: "~/Developer/D0TS/releasenotes.json", description: "Music sequencer")
+    App(name: "D0TS:Echoplex", iconPath: "apps/echoplex.png", slug: "echoplex", releaseNotesPath: "~/Developer/D0TS/releasenotes.json", description: "Music sequencer"),
+    App(name: "Comic Book Day", slug: "comicbookday", description: "Track comic book releases")
 ]
 
 let extraApps: [App] = [
@@ -85,10 +85,12 @@ let appsHTML = apps.map { app in
         </a>
     """ }.joined(separator: "\n")
 
-let appsAdminHTML = (apps + extraApps).map { app in
+let appsAdminHTML = (apps + extraApps).compactMap { app in
     let url = URL(fileURLWithPath: NSString(string: app.releaseNotesPath).expandingTildeInPath)
     let data = try! Data(contentsOf: url)
-    let releaseNotes = try! decoder.decode(TrackupDocument.self, from: data)
+    guard let releaseNotes = try? decoder.decode(TrackupDocument.self, from: data) else {
+        return nil
+    }
     let lastVersion = releaseNotes.versions.first!
     let date = Calendar.current.date(from: lastVersion.createdDate!)
     let dateString = RelativeDateTimeFormatter().localizedString(for: date!, relativeTo: Date())
@@ -103,7 +105,7 @@ let appsAdminHTML = (apps + extraApps).map { app in
         </a>
     """ }.joined(separator: "\n")
 
-guard let indexTemplate = try? String(contentsOfFile: "template/index.html") else {
+guard let indexTemplate = try? String(contentsOfFile: "template/index.html", encoding: .utf8) else {
     abort()
 }
 
