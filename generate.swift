@@ -46,7 +46,7 @@ public struct TrackupVersion: Codable {
 
     func inProgress() -> Bool {
         for item in self.items {
-            if (item.state != .unknown) {
+            if item.state != .unknown {
                 return true
             }
         }
@@ -76,36 +76,46 @@ public enum TrackupItemStatus: String, Codable {
 let decoder = JSONDecoder()
 let appsHTML = apps.map { app in
     return """
-        <a class="app" href="https://www.studioamanga.com/\(app.slug)/">
-            <img alt="\(app.name) Icon" class="icon" src="img/\(app.iconPath)">
-            <div>
-                <h3>\(app.name)</h3>
-                <div class="subtitle">\(app.description)</div>
-            </div>
-        </a>
-    """ }.joined(separator: "\n")
+            <a class="app" href="https://www.studioamanga.com/\(app.slug)/">
+                <img alt="\(app.name) Icon" class="icon" src="img/\(app.iconPath)">
+                <div>
+                    <h3>\(app.name)</h3>
+                    <div class="subtitle">\(app.description)</div>
+                </div>
+            </a>
+        """
+}.joined(separator: "\n")
 
 let appsAdminHTML = (apps + extraApps).compactMap { app in
-    let url = URL(fileURLWithPath: NSString(string: app.releaseNotesPath).expandingTildeInPath)
+    let url = URL(
+        fileURLWithPath: NSString(string: app.releaseNotesPath)
+            .expandingTildeInPath)
     let data = try! Data(contentsOf: url)
-    guard let releaseNotes = try? decoder.decode(TrackupDocument.self, from: data) else {
+    guard
+        let releaseNotes = try? decoder.decode(TrackupDocument.self, from: data)
+    else {
         return nil
     }
     let lastVersion = releaseNotes.versions.first!
     let date = Calendar.current.date(from: lastVersion.createdDate!)
-    let dateString = RelativeDateTimeFormatter().localizedString(for: date!, relativeTo: Date())
+    let dateString = RelativeDateTimeFormatter().localizedString(
+        for: date!, relativeTo: Date())
 
     return """
-        <a class="app" href="https://www.studioamanga.com/\(app.slug)/">
-            <img alt="\(app.name) Icon" class="icon" src="img/\(app.iconPath)">
-            <div>
-                <h3>\(app.name)</h3>
-                <div class="subtitle">Last version: \(lastVersion.title), published \(dateString)</div>
-            </div>
-        </a>
-    """ }.joined(separator: "\n")
+            <a class="app" href="https://www.studioamanga.com/\(app.slug)/">
+                <img alt="\(app.name) Icon" class="icon" src="img/\(app.iconPath)">
+                <div>
+                    <h3>\(app.name)</h3>
+                    <div class="subtitle">Last version: \(lastVersion.title), published \(dateString)</div>
+                </div>
+            </a>
+        """
+}.joined(separator: "\n")
 
-guard let indexTemplate = try? String(contentsOfFile: "template/index.html", encoding: .utf8) else {
+guard
+    let indexTemplate = try? String(
+        contentsOfFile: "template/index.html", encoding: .utf8)
+else {
     abort()
 }
 
@@ -113,6 +123,7 @@ let indexHTML = indexTemplate.replacingOccurrences(of: "[APPS]", with: appsHTML)
 let indexRenderedURL = URL(fileURLWithPath: "rendered/index.html")
 try? indexHTML.write(to: indexRenderedURL, atomically: true, encoding: .utf8)
 
-let adminHTML = indexTemplate.replacingOccurrences(of: "[APPS]", with: appsAdminHTML)
+let adminHTML = indexTemplate.replacingOccurrences(
+    of: "[APPS]", with: appsAdminHTML)
 let adminRenderedURL = URL(fileURLWithPath: "rendered/admin.html")
 try? adminHTML.write(to: adminRenderedURL, atomically: true, encoding: .utf8)
