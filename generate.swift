@@ -22,11 +22,11 @@ let apps: [App] = [
     App(name: "Mega Moji", slug: "megamoji", description: "Big emoji for iMessage"),
     App(name: "Memorii", slug: "memorii", description: "Study Chinese, Japanese, and Korean"),
     App(name: "WizBox", slug: "wizbox", description: "Magic: The Gathering toolbox"),
-    App(name: "D0TS:Echoplex", iconPath: "apps/echoplex.png", slug: "echoplex", releaseNotesPath: "~/Developer/D0TS/releasenotes.json", description: "Music sequencer"),
-    App(name: "Comic Book Day", slug: "comicbookday", description: "Track comic book releases")
+    App(name: "D0TS:Echoplex", iconPath: "apps/echoplex.png", slug: "echoplex", releaseNotesPath: "~/Developer/D0TS/releasenotes.json", description: "Music sequencer")
 ]
 
 let extraApps: [App] = [
+    App(name: "Comic Book Day", slug: "comicbookday", description: "Track comic book releases"),
     App(name: "Air Grenoble", slug: "airgrenoble", description: "Retrouvez l’indice de qualité de l’air pour Grenoble"),
     App(name: "Grenoble Municipal Library", iconPath: "apps/bm.png", slug: "bmgrenoble", releaseNotesPath: "~/Developer/bm-grenoble-ios/releasenotes.json", description: "Connect your Grenoble Municipal Library account and check your current loans"),
     App(name: "PlayGuide", iconPath: "apps/pg.png", slug: "", releaseNotesPath: "~/Developer/bm-grenoble-ios/releasenotes.json", description: "L’annuaire des aires de jeux pour enfants")
